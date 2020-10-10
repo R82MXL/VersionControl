@@ -32,7 +32,7 @@ namespace Excel_export
                 "Ár (mFt)",
                 "Négyzetméter ár (Ft/m2)"};
 
-        object[,] values = new object[Flats.Count, headers.Length];
+        object[,] values;
         public Form1()
         {
             InitializeComponent();
@@ -81,6 +81,8 @@ namespace Excel_export
 
         private void CreateTable()
         {
+            values = new object[Flats.Count, headers.Length];
+
             for (int i = 0; i < headers.Length; i++)
             {
                 xlSheet.Cells[1, i+1] = headers[i];
