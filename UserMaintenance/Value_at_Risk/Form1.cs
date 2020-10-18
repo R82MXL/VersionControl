@@ -16,8 +16,6 @@ namespace Value_at_Risk
         PortfolioEntities context = new PortfolioEntities();
         List<Tick> Ticks;
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
-        DataGridView dataGridView1;
-        DataGridView dataGridView2;
 
         public Form1()
         {
