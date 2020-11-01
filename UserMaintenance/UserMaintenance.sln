@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel_export", "..\Excel_ex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Value_at_Risk", "..\Value_at_Risk\Value_at_Risk.csproj", "{498E094A-2FE8-4C8A-885A-A846CD53B9E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "..\WebService\WebService.csproj", "{C0E43243-0763-4361-80AD-FCE7E629521A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{498E094A-2FE8-4C8A-885A-A846CD53B9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{498E094A-2FE8-4C8A-885A-A846CD53B9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{498E094A-2FE8-4C8A-885A-A846CD53B9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E43243-0763-4361-80AD-FCE7E629521A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E43243-0763-4361-80AD-FCE7E629521A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E43243-0763-4361-80AD-FCE7E629521A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E43243-0763-4361-80AD-FCE7E629521A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
