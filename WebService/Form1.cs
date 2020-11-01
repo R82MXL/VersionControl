@@ -20,6 +20,13 @@ namespace WebService
         {
             InitializeComponent();
 
+            dataGridView1.DataSource = Rates;
+
+            RefreshData();
+        }
+
+        void WebServiceCall()
+        {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var request = new GetExchangeRatesRequestBody()
@@ -32,10 +39,7 @@ namespace WebService
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
 
-            dataGridView1.DataSource = Rates;
-
             XMLProcess(result);
-            DisplayData();
         }
 
         BindingList<RateData> Rates = new BindingList<RateData>();
@@ -79,6 +83,28 @@ namespace WebService
             chartArea.AxisX.MajorGrid.Enabled = false;
             chartArea.AxisY.MajorGrid.Enabled = false;
             chartArea.AxisY.IsStartedFromZero = false;
+        }
+
+        void RefreshData()
+        {
+            Rates.Clear();
+            
+            DisplayData();
+        }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void DateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
