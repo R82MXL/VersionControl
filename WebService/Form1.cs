@@ -21,6 +21,7 @@ namespace WebService
             InitializeComponent();
 
             dataGridView1.DataSource = Rates;
+            //comboBox1.DataSource = Currencies;
 
             RefreshData();
         }
@@ -41,6 +42,18 @@ namespace WebService
 
             XMLProcess(result);
         }
+
+        /*void WebServiceCallCurr()
+        {
+            var mnbService = new MNBArfolyamServiceSoapClient();
+
+            var requestcurr = new GetCurrenciesRequestBody();
+            var responsecurr = mnbService.GetCurrencies(requestcurr);
+            var resultcurr = responsecurr.GetCurrenciesResult.ToString();
+
+            XMLProcessCurr(resultcurr);
+        }*/
+        //BindingList<string> Currencies = new BindingList<string>();
 
         BindingList<RateData> Rates = new BindingList<RateData>();
         
@@ -65,6 +78,19 @@ namespace WebService
                     rate.Value = value / unit;
             }
         }
+
+        /*void XMLProcessCurr(string resultcurr)
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(resultcurr);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+            }
+        }*/
 
         void DisplayData()
         {
