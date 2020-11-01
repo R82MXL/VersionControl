@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebService.MnbServiceReference;
+using WebService.Entities;
 
 namespace WebService
 {
@@ -28,6 +29,11 @@ namespace WebService
 
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
+
+            dataGridView1.DataSource = Rates;
         }
+
+        BindingList<RateData> Rates = new BindingList<RateData>();
+        
     }
 }
