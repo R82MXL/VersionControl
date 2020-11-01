@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebService.MnbServiceReference;
 using WebService.Entities;
+using System.Xml;
 
 namespace WebService
 {
@@ -31,9 +32,32 @@ namespace WebService
             var result = response.GetExchangeRatesResult;
 
             dataGridView1.DataSource = Rates;
+
+            XMLProcess(result);
         }
 
         BindingList<RateData> Rates = new BindingList<RateData>();
         
+        void XMLProcess(string result)
+        {
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                Rates.Add(rate);
+
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+
+                var unit = decimal.Parse(childElement.GetAttribute("unit"));
+                var value = decimal.Parse(childElement.InnerText);
+                if (unit != 0)
+                    rate.Value = value / unit;
+            }
+        }
     }
 }
