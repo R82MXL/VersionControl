@@ -21,8 +21,9 @@ namespace WebService
             InitializeComponent();
 
             dataGridView1.DataSource = Rates;
-            //comboBox1.DataSource = Currencies;
+            comboBox1.DataSource = Currencies;
 
+            WebServiceCallCurr();
             RefreshData();
         }
 
@@ -43,17 +44,18 @@ namespace WebService
             XMLProcess(result);
         }
 
-        /*void WebServiceCallCurr()
+        void WebServiceCallCurr()
         {
             var mnbService = new MNBArfolyamServiceSoapClient();
 
             var requestcurr = new GetCurrenciesRequestBody();
             var responsecurr = mnbService.GetCurrencies(requestcurr);
-            var resultcurr = responsecurr.GetCurrenciesResult.ToString();
+            var resultcurr = responsecurr.GetCurrenciesResult;
 
             XMLProcessCurr(resultcurr);
-        }*/
-        //BindingList<string> Currencies = new BindingList<string>();
+        }
+
+        BindingList<string> Currencies = new BindingList<string>();
 
         BindingList<RateData> Rates = new BindingList<RateData>();
         
@@ -70,6 +72,8 @@ namespace WebService
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
 
                 var childElement = (XmlElement)element.ChildNodes[0];
+                if (childElement == null)
+                    continue;
                 rate.Currency = childElement.GetAttribute("curr");
 
                 var unit = decimal.Parse(childElement.GetAttribute("unit"));
@@ -79,18 +83,17 @@ namespace WebService
             }
         }
 
-        /*void XMLProcessCurr(string resultcurr)
+        void XMLProcessCurr(string resultcurr)
         {
             var xml = new XmlDocument();
             xml.LoadXml(resultcurr);
 
             foreach (XmlElement element in xml.DocumentElement)
             {
-                var rate = new RateData();
-                var childElement = (XmlElement)element.ChildNodes[0];
-                rate.Currency = childElement.GetAttribute("curr");
+                for (int i = 0; i < element.ChildNodes.Count; i++)
+                Currencies.Add(element.ChildNodes[i].InnerText);
             }
-        }*/
+        }
 
         void DisplayData()
         {

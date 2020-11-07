@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Value_at_Risk", "..\Value_a
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "..\WebService\WebService.csproj", "{C0E43243-0763-4361-80AD-FCE7E629521A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSimulation", "..\MicroSimulation\MicroSimulation.csproj", "{9BB15758-2547-4798-802A-0CA505E5547F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C0E43243-0763-4361-80AD-FCE7E629521A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0E43243-0763-4361-80AD-FCE7E629521A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0E43243-0763-4361-80AD-FCE7E629521A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB15758-2547-4798-802A-0CA505E5547F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB15758-2547-4798-802A-0CA505E5547F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB15758-2547-4798-802A-0CA505E5547F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB15758-2547-4798-802A-0CA505E5547F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
