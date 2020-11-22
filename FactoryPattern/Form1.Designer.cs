@@ -28,10 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSelectCar = new System.Windows.Forms.Button();
             this.btnSelectBall = new System.Windows.Forms.Button();
             this.lblNext = new System.Windows.Forms.Label();
             this.btnColor = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.btnSelectPresent = new System.Windows.Forms.Button();
+            this.btnColorPresent = new System.Windows.Forms.Button();
+            this.createTimer = new System.Windows.Forms.Timer(this.components);
+            this.conveyorTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnSelectCar
@@ -76,17 +82,60 @@
             this.btnColor.UseVisualStyleBackColor = false;
             this.btnColor.Click += new System.EventHandler(this.BtnColor_Click);
             // 
+            // mainPanel
+            // 
+            this.mainPanel.Location = new System.Drawing.Point(-1, 166);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(833, 173);
+            this.mainPanel.TabIndex = 4;
+            // 
+            // btnSelectPresent
+            // 
+            this.btnSelectPresent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectPresent.Location = new System.Drawing.Point(223, 14);
+            this.btnSelectPresent.Name = "btnSelectPresent";
+            this.btnSelectPresent.Size = new System.Drawing.Size(78, 57);
+            this.btnSelectPresent.TabIndex = 5;
+            this.btnSelectPresent.Text = "PRESENT";
+            this.btnSelectPresent.UseVisualStyleBackColor = true;
+            this.btnSelectPresent.Click += new System.EventHandler(this.BtnSelectPresent_Click);
+            // 
+            // btnColorPresent
+            // 
+            this.btnColorPresent.BackColor = System.Drawing.Color.Red;
+            this.btnColorPresent.Location = new System.Drawing.Point(223, 78);
+            this.btnColorPresent.Name = "btnColorPresent";
+            this.btnColorPresent.Size = new System.Drawing.Size(78, 34);
+            this.btnColorPresent.TabIndex = 6;
+            this.btnColorPresent.UseVisualStyleBackColor = false;
+            this.btnColorPresent.Click += new System.EventHandler(this.BtnColor_Click);
+            // 
+            // createTimer
+            // 
+            this.createTimer.Enabled = true;
+            this.createTimer.Interval = 3000;
+            this.createTimer.Tick += new System.EventHandler(this.CreateTimer_Tick_1);
+            // 
+            // conveyorTimer
+            // 
+            this.conveyorTimer.Enabled = true;
+            this.conveyorTimer.Interval = 10;
+            this.conveyorTimer.Tick += new System.EventHandler(this.ConveyorTimer_Tick_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 339);
+            this.Controls.Add(this.btnColorPresent);
+            this.Controls.Add(this.btnSelectPresent);
+            this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.btnColor);
             this.Controls.Add(this.lblNext);
             this.Controls.Add(this.btnSelectBall);
             this.Controls.Add(this.btnSelectCar);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "FactoryPattern";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,6 +147,11 @@
         private System.Windows.Forms.Button btnSelectBall;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Button btnColor;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Button btnSelectPresent;
+        private System.Windows.Forms.Button btnColorPresent;
+        private System.Windows.Forms.Timer createTimer;
+        private System.Windows.Forms.Timer conveyorTimer;
     }
 }
 
