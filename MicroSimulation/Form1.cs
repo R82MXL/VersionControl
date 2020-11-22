@@ -30,7 +30,7 @@ namespace MicroSimulation
 
         }
 
-        private List<DeathProbability> GetDeathProbabilities(string csvpath)
+        public List<DeathProbability> GetDeathProbabilities(string csvpath)
         {
             List<DeathProbability> deathprobability = new List<DeathProbability>();
 

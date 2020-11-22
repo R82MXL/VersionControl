@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "..\WebService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroSimulation", "..\MicroSimulation\MicroSimulation.csproj", "{9BB15758-2547-4798-802A-0CA505E5547F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryPattern", "..\FactoryPattern\FactoryPattern.csproj", "{66A0A967-AFD6-4A20-ABB5-A0C13C4C3CEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9BB15758-2547-4798-802A-0CA505E5547F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BB15758-2547-4798-802A-0CA505E5547F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BB15758-2547-4798-802A-0CA505E5547F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66A0A967-AFD6-4A20-ABB5-A0C13C4C3CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66A0A967-AFD6-4A20-ABB5-A0C13C4C3CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66A0A967-AFD6-4A20-ABB5-A0C13C4C3CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66A0A967-AFD6-4A20-ABB5-A0C13C4C3CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
